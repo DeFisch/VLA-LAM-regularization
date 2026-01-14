@@ -1,0 +1,6 @@
+[submodule "VLA-Adapter-VLM"]
+	path = VLA-Adapter-VLM
+	url = git@github.com:DeFisch/VLA-Adapter-VLM.git
+[submodule "VLA-Adapter-clean"]
+	path = VLA-Adapter-clean
+	url = git@github.com:DeFisch/VLA-Adapter-clean.git

@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "align_stage_components": [
+      "download/llava-laion-cc-sbu-558k/chat.json",
+      "download/llava-laion-cc-sbu-558k"
+    ],
+    "dataset_id": "llava-v15",
+    "dataset_root_dir": "/hai/scratch/belkhale/datasets/prismatic-vlms",
+    "finetune_stage_components": [
+      "download/llava-v1.5-instruct/llava_v1_5_mix665k.json",
+      "download/llava-v1.5-instruct"
+    ],
+    "type": "llava-v15"
+  },
+  "hf_token": ".hf_token",
+  "model": {
+    "align_epochs": 1,
+    "align_global_batch_size": 96,
+    "align_learning_rate": 0.001,
+    "align_lr_scheduler_type": "linear-warmup+cosine-decay",
+    "align_max_grad_norm": 1.0,
+    "align_max_steps": null,
+    "align_per_device_batch_size": 16,
+    "align_save_every_n_steps": 10000,
+    "align_train_strategy": "fsdp-shard-grad-op",
+    "align_warmup_ratio": 0.03,
+    "align_weight_decay": 0.0,
+    "arch_specifier": "no-align+fused-gelu-mlp",
+    "enable_gradient_checkpointing": true,
+    "enable_mixed_precision_training": true,
+    "finetune_epochs": 2,
+    "finetune_global_batch_size": 64,
+    "finetune_learning_rate": 2e-05,
+    "finetune_lr_scheduler_type": "linear-warmup+cosine-decay",
+    "finetune_max_grad_norm": 1.0,
+    "finetune_max_steps": null,
+    "finetune_per_device_batch_size": 4,
+    "finetune_save_every_n_steps": 10000,
+    "finetune_train_strategy": "fsdp-full-shard",
+    "finetune_warmup_ratio": 0.03,
+    "finetune_weight_decay": 0.1,
+    "image_resize_strategy": "resize-naive",
+    "llm_backbone_id": "qwen25-0_5b-extra",
+    "llm_max_length": 32768,
+    "model_id": "prism-qwen25-extra-dinosiglip-224px+0_5b",
+    "reduce_in_full_precision": false,
+    "type": "prism-qwen25-extra-dinosiglip-224px+0_5b",
+    "vision_backbone_id": "dinosiglip-vit-so-224px"
+  },
+  "pretrained_checkpoint": null,
+  "run_id": "prism-qwen25-extra-dinosiglip-224px+0_5b+stage-finetune+x7",
+  "run_root_dir": "runs",
+  "seed": 7,
+  "stage": "finetune",
+  "trackers": [
+    "jsonl",
+    "wandb"
+  ],
+  "wandb_entity": null,
+  "wandb_project": "prismatic"
+}

@@ -1,0 +1,49 @@
+config_file_path: pretrained_models/configs
+vlm_path: /home/daniel/code/lam-latent/VLA-Adapter-clean/pretrained_models/prism-qwen25-extra-dinosiglip-224px-0_5b
+use_minivlm: true
+
+# LAM Model
+lam_path: /home/daniel/code/lam-latent/checkpoints/univla-latent-action-model/lam-stage-2.ckpt
+use_lam: true
+lam_loss_weight: 1.0
+lam_window_size: 12
+lam_tap_block: 24
+lam_only: false
+lam_decoder_type: transformer
+lam_use_vlm_hidden: false
+
+# Dataset
+data_root_dir: /home/daniel/code/lam-latent/modified_libero_rlds
+dataset_name: libero_10_no_noops
+run_root_dir: runs
+shuffle_buffer_size: 500
+
+# Algorithm
+use_l1_regression: true
+use_diffusion: false
+use_film: false
+num_images_in_input: 2
+use_proprio: true
+use_pro_version: true
+
+# Training (matching original config - adjusted for 32GB GPU)
+batch_size: 4
+learning_rate: 2e-4
+lr_warmup_steps: 0.1
+num_steps_before_decay: 200000
+grad_accumulation_steps: 4
+max_steps: 1000
+max_grad_norm: 1.0
+save_freq: 500
+save_latest_checkpoint_only: true
+image_aug: true
+merge_lora_during_training: true
+
+# LoRA
+use_lora: true
+lora_rank: 64
+lora_dropout: 0.0
+
+# Logging
+wandb_project: vla-adapter-lam
+wandb_log_freq: 10
